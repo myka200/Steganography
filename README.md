@@ -1,19 +1,20 @@
-# Secure Image Steganography
+# Secure Image Steganography 🔍🖼️
 
-This project implements **LSB (Least Significant Bit) steganography** to **hide and extract secret messages** in images. It allows users to embed messages inside images without visible distortion.
+This project implements **Least Significant Bit (LSB) steganography** to **hide and extract secret messages** within images. It modifies pixel values slightly, making the changes undetectable to the human eye.
 
 ---
 
 ## 📌 Features
-✅ Hide text messages inside images  
+✅ Hide secret text messages inside images  
 ✅ Extract hidden messages from stego images  
 ✅ Uses **LSB steganography** (modifies pixel values subtly)  
 ✅ Works with **PNG images** (lossless compression)  
+✅ No visible changes to the image after encoding  
 
 ---
 
 ## 🔧 Installation
-Ensure you have **Python 3.x** installed. Then, install the required libraries:  
+Ensure you have **Python 3.x** installed. Then, install the required dependencies:  
 ```bash
 pip install opencv-python numpy pillow
 ```
@@ -26,16 +27,14 @@ Run the following command:
 ```bash
 python steganography.py --encode
 ```
-- You will be asked to enter the **image file** and **secret message**.  
-- The script will generate a **stego image** with the hidden message.  
+- The script will load `landscape.png`, hide the message, and save `stego_image_with_secret.png`.  
 
 ### **🔹 To Extract the Hidden Message**
 Run the following command:  
 ```bash
 python steganography.py --decode
 ```
-- Enter the **stego image filename** when prompted.  
-- The script will **reveal the hidden message**.
+- The script will read `stego_image_with_secret.png` and reveal the hidden message.  
 
 ---
 
@@ -43,15 +42,11 @@ python steganography.py --decode
 ### **Hiding a Message**
 ```
 $ python steganography.py --encode
-Enter the input image filename: landscape.png
-Enter the secret message: Dark Matter
-Message hidden successfully in stego_image_with_secret.png
+Data hidden successfully.
 ```
-
 ### **Extracting the Hidden Message**
 ```
 $ python steganography.py --decode
-Enter the stego image filename: stego_image_with_secret.png
 Hidden Message: Dark Matter
 ```
 
@@ -62,26 +57,21 @@ Hidden Message: Dark Matter
 /steganography_project
 │── README.md
 │── steganography.py
-│── landscape.png
-│── stego_image_with_secret.png
+│── landscape.png            # Input image
+│── stego_image_with_secret.png  # Image with hidden data
 ```
 
 ---
 
 ## 🛠 Future Enhancements
-- Add **encryption for additional security**  
+- Add **encryption before hiding data** for extra security  
 - Implement **GUI version (Tkinter or Flask)**  
-- Expand to **video/audio steganography**  
+- Support **different image formats (JPEG, BMP, etc.)**  
 
 ---
 
 ## 📜 License
 This project is licensed under the **MIT License**.
-
----
-
-## 🤝 Contribution
-Feel free to contribute by submitting a **pull request** or reporting issues.  
 
 ---
 
